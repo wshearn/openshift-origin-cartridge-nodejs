@@ -19,6 +19,15 @@ for dir in configuration etc; do
     cp -Lr $OPENSHIFT_NODEJS_DIR/versions/$version/$dir/* $OPENSHIFT_NODEJS_DIR/$dir 
 done
 
+if [[ "$version" == "0.10" ]]
+then
+    ln -s $OPENSHIFT_NODEJS_DIR/versions/0.10/bin/node $OPENSHIFT_NODEJS_DIR/bin/node/
+    ln -s $OPENSHIFT_NODEJS_DIR/versions/0.10/bin/npm $OPENSHIFT_NODEJS_DIR/bin/node/
+else
+    rm $OPENSHIFT_NODEJS_DIR/bin/node/node
+    rm $OPENSHIFT_NODEJS_DIR/bin/node/npm
+fi
+
 ###
 pushd $OPENSHIFT_NODEJS_DIR > /dev/null
 for dir in conf logs sessions run tmp; do
