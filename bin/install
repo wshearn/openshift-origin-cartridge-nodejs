@@ -40,6 +40,9 @@ chown $OPENSHIFT_APP_UUID.$OPENSHIFT_APP_UUID -R "$OPENSHIFT_HOMEDIR"/.npm "$OPE
                             "$OPENSHIFT_HOMEDIR"/.node-gyp
 npm config set tmp $OPENSHIFT_TMP_DIR
 
-pushd $OPENSHIFT_REPO_DIR >/dev/null
-  npm install >/dev/null 2>&1
-popd >/dev/null
+if [[ "$version" == "0.10" ]]
+then
+  pushd $OPENSHIFT_REPO_DIR >/dev/null
+    $OPENSHIFT_NODEJS_DIR/bin/node/npm install >/dev/null 2>&1
+  popd >/dev/null
+fi
