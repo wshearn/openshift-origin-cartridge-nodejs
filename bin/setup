@@ -24,10 +24,10 @@ then
     ln -s $OPENSHIFT_NODEJS_DIR/versions/0.10/bin/node $OPENSHIFT_NODEJS_DIR/bin/node/
     ln -s $OPENSHIFT_NODEJS_DIR/versions/0.10/bin/npm $OPENSHIFT_NODEJS_DIR/bin/node/
 else
-    if [[ -f $OPENSHIFT_NODEJS/bin/node/node ]] ; then
+    if [[ -f $OPENSHIFT_NODEJS_DIR/bin/node/node ]] ; then
       rm $OPENSHIFT_NODEJS_DIR/bin/node/node
     fi
-    if [[ -f $OPENSHIFT_NODEJS/bin/node/npm ]] ; then
+    if [[ -f $OPENSHIFT_NODEJS_DIR/bin/node/npm ]] ; then
       rm $OPENSHIFT_NODEJS_DIR/bin/node/npm
     fi
 fi
