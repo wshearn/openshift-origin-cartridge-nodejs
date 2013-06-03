@@ -27,10 +27,6 @@ pushd $OPENSHIFT_NODEJS_DIR > /dev/null
     mkdir -p node_modules
     npm link $module_list >/dev/null 2>&1
     mv node_modules $OPENSHIFT_HOMEDIR/.node_modules
-  else #This sucks
-    pushd $OPENSHIFT_REPO_DIR >/dev/null
-      npm install >/dev/null 2>&1
-    popd >/dev/null
   fi
 popd > /dev/null
 
