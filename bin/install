@@ -8,11 +8,15 @@ esac
 
 if [[ "$version" == "0.10" ]]
 then
-    ln -s $OPENSHIFT_NODEJS_DIR/versions/0.10/bin/node $OPENSHIFT_NODEJS_DIR/bin/node/
-    ln -s $OPENSHIFT_NODEJS_DIR/versions/0.10/bin/npm $OPENSHIFT_NODEJS_DIR/bin/node/
+    ln -sf $OPENSHIFT_NODEJS_DIR/versions/0.10/bin/node $OPENSHIFT_NODEJS_DIR/bin/node/
+    ln -sf $OPENSHIFT_NODEJS_DIR/versions/0.10/bin/npm $OPENSHIFT_NODEJS_DIR/bin/node/
 else
-    rm $OPENSHIFT_NODEJS_DIR/bin/node/node
-    rm $OPENSHIFT_NODEJS_DIR/bin/node/npm
+    if [[ -f $OPENSHIFT_NODEJS/bin/node/node ]] ; then
+      rm $OPENSHIFT_NODEJS_DIR/bin/node/node
+    fi
+    if [[ -f $OPENSHIFT_NODEJS/bin/node/npm ]] ; then
+      rm $OPENSHIFT_NODEJS_DIR/bin/node/npm
+    fi
 fi
 
 ## npm link
