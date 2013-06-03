@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 ctl_app stop
-ctl_app deploy
+ctl_app build
 ctl_app start
