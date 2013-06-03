@@ -19,16 +19,6 @@ else
     fi
 fi
 
-mkdir -p $OPENSHIFT_NODEJS_DIR/template
-cp -Lr $OPENSHIFT_NODEJS_DIR/versions/$version/template/* $OPENSHIFT_NODEJS_DIR/template.git
-pushd $OPENSHIFT_NODEJS_DIR/template.git > /dev/null
-    git init
-    git config user.email builder@example.com
-    git config user.name 'Template builder'
-    git add -A
-    git commit -a -m "Creating template"
-popd > /dev/null
-
 ## npm link
 pushd $OPENSHIFT_NODEJS_DIR > /dev/null
   mkdir -p node_modules
