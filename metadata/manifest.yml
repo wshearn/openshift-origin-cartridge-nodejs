@@ -9,6 +9,7 @@ License: MIT License
 License-Url: https://raw.github.com/joyent/node/v0.6/LICENSE
 Vendor: www.nodejs.org
 Website: "http://www.nodejs.org/"
+Install-Build-Required: true
 Cartridge-Version: 0.0.1
 Cartridge-Vendor: rainbowdash
 Categories:

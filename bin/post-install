@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-$OPENSHIFT_NODEJS_DIR/bin/control stop
-$OPENSHIFT_NODEJS_DIR/bin/control build
-$OPENSHIFT_NODEJS_DIR/bin/control deploy
