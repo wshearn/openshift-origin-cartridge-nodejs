@@ -6,6 +6,15 @@ case "$1" in
     version="$2"
 esac
 
+if [[ "$version" == "0.10" ]]
+then
+    ln -s $OPENSHIFT_NODEJS_DIR/versions/0.10/bin/node $OPENSHIFT_NODEJS_DIR/bin/node/
+    ln -s $OPENSHIFT_NODEJS_DIR/versions/0.10/bin/npm $OPENSHIFT_NODEJS_DIR/bin/node/
+else
+    rm $OPENSHIFT_NODEJS_DIR/bin/node/node
+    rm $OPENSHIFT_NODEJS_DIR/bin/node/npm
+fi
+
 ## npm link
 pushd $OPENSHIFT_NODEJS_DIR > /dev/null
   mkdir -p node_modules
