@@ -11,7 +11,7 @@ Vendor: www.nodejs.org
 Website: "http://www.nodejs.org/"
 Install-Build-Required: true
 Cartridge-Version: 0.0.1
-Cartridge-Vendor: rainbowdash
+Cartridge-Vendor: wshearn
 Categories:
   - service
   - javascript
