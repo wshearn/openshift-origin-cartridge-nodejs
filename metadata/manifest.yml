@@ -4,8 +4,7 @@ Display-Name: Node.js 0.10
 Description: "Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js is perfect for data-intensive real-time applications that run across distributed devices."
 Version: "0.10"
 Versions: ['0.10', '0.6']
-#Source-Url: https://github.com/wshearn/openshift-origin-cartridge-nodejs.git
-Source-Url: https://github.com/engineersamuel/openshift-origin-cartridge-nodejs.git
+Source-Url: https://github.com/wshearn/openshift-origin-cartridge-nodejs.git
 License: MIT License
 License-Url: https://raw.github.com/joyent/node/v0.6/LICENSE
 Vendor: www.nodejs.org
