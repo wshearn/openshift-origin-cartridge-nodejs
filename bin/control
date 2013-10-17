@@ -215,7 +215,9 @@ function build() {
     unset GIT_WORK_TREE
 
     if [ -f "${OPENSHIFT_REPO_DIR}"/package.json ]; then
-        (cd "${OPENSHIFT_REPO_DIR}"; npm install -d)
+        # @engineersamuel 10/17/2013 - `npm install -d` is too liberal and installs devDependencies.  
+        # Changing to --production to prevent that.
+        (cd "${OPENSHIFT_REPO_DIR}"; npm install --production)
     fi
 
 }
