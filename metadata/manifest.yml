@@ -1,16 +1,16 @@
 Name: nodejs
 Cartridge-Short-Name: NODEJS
-Display-Name: Node.js 0.10
+Display-Name: Node.js 0.12
 Description: "Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js is perfect for data-intensive real-time applications that run across distributed devices."
-Version: "0.10"
-Versions: ['0.10', '0.6']
+Version: "0.12"
+Versions: ['0.12', '0.10', '0.6']
 Source-Url: https://github.com/wshearn/openshift-origin-cartridge-nodejs.git
 License: MIT License
 License-Url: https://raw.github.com/joyent/node/v0.6/LICENSE
 Vendor: www.nodejs.org
 Website: "http://www.nodejs.org/"
 Install-Build-Required: true
-Cartridge-Version: 0.0.1
+Cartridge-Version: 0.1
 Cartridge-Vendor: wshearn
 Categories:
   - service
@@ -53,10 +53,10 @@ Cart-Data:
 Suggests:
 
 Provides:
-  - nodejs-0.10
+  - nodejs-0.12
   - "nodejs"
-  - "nodejs (version) = 0.10.9"
-  - "nodejs (version) = 0.10"
+  - "nodejs (version) = 0.12.2"
+  - "nodejs (version) = 0.12"
 Requires:
 
 Conflicts:
@@ -88,7 +88,7 @@ Subscribes:
     Required : false
 Group-Overrides:
   - components:
-    - nodejs-0.10
+    - nodejs-0.12
     - web_proxy
 Endpoints:
   - Private-IP-Name:   IP
@@ -103,6 +103,17 @@ Endpoints:
         Backend:       ""
         Options:       { health: true }
 Version-Overrides:
+  '0.10':
+    Display-Name: NodeJS 0.10
+    Provides:
+      - nodejs-0.10
+      - "nodejs"
+      - "nodejs (version) = 0.10.9"
+      - "nodejs (version) = 0.10"
+    Group-Overrides:
+      - components:
+        - nodejs-0.10
+        - web_proxy
   '0.6':
     Display-Name: NodeJS 0.6
     Provides:

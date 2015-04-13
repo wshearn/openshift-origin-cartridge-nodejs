@@ -6,7 +6,11 @@ case "$1" in
     version="$2"
 esac
 
-if [[ "$version" == "0.10" ]]
+if [[ "$version" == "0.12" ]]
+then
+    ln -sf $OPENSHIFT_NODEJS_DIR/versions/0.12/bin/node $OPENSHIFT_NODEJS_DIR/bin/node/
+    ln -sf $OPENSHIFT_NODEJS_DIR/versions/0.12/bin/npm $OPENSHIFT_NODEJS_DIR/bin/node/
+elif [[ "$version" == "0.10" ]]
 then
     ln -sf $OPENSHIFT_NODEJS_DIR/versions/0.10/bin/node $OPENSHIFT_NODEJS_DIR/bin/node/
     ln -sf $OPENSHIFT_NODEJS_DIR/versions/0.10/bin/npm $OPENSHIFT_NODEJS_DIR/bin/node/
